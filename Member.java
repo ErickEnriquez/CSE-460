@@ -39,6 +39,7 @@ public class Member implements ISubscriber {
 		this.messages = new ArrayList<String>();
 		this.broker = Broker.getInstance();
 		broker.add_member(this);//add the member to the brokers list of members
+		System.out.println(broker.subscribers.size());
 		//END
 	}
 
