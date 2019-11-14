@@ -102,7 +102,7 @@ public class Broker {
 	 *  
 	 */
 	public void add_keyword(List<String> words) {
-		//BEGIN
+			//BEGIN
 		//NOT DONW YET
 		for(int i = 0 ; i < words.size();i++){
 			System.out.println(words.get(i));
@@ -130,11 +130,26 @@ public class Broker {
 		//END
 	}
 
+	/**
+	 * this function returns the list of the keywords that the broker has stored
+	 * 
+	 */
 	public List<String> get_keywords() {
 		//BEGIN
 		return this.keywords;
 		//return null;
 		//END
+		//return null;
+	}
+
+	/**
+	 * this method allows a message to be added to a broker object
+	 * 
+	 * 
+	 *  
+	 */
+	public void add_messages(String text) {
+
 	}
 
 }
