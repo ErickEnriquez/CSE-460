@@ -1,3 +1,7 @@
+//BEGIN
+import java.util.List;
+import java.util.ArrayList;
+//END
 /**
  * Broker is a singleton object used by subscribers to post info and by members to retrieve info without having them have to know about each other directly
  * 
@@ -33,6 +37,8 @@ public class Broker {
 
 	/**
 	 * notify members is function that will let the members that have subscribed to a keyword know about a message
+	 * 
+	 *  
 	 */
 	public void notify_members() {
 
@@ -40,6 +46,8 @@ public class Broker {
 
 	/**
 	 * Broker is the private constuctor to the singleton class 
+	 * 
+	 *  
 	 */
 	private Broker() {
 
@@ -47,6 +55,8 @@ public class Broker {
 
 	/**
 	 * this method gets the instance of the singleton object if it hasn't been instantiated then it does that first
+	 * 
+	 *  
 	 */
 	public static Broker getInstance() {
 		return null;
@@ -63,6 +73,8 @@ public class Broker {
 	/**
 	 * overloaded method that takes a list of keywords and adds the ones that havent been added previously into the keywords list
 	 * 
+	 * 
+	 *  
 	 */
 	public void add_keyword(List<String> words) {
 
@@ -77,6 +89,8 @@ public class Broker {
 
 	/**
 	 * this method will add the Author object to the list of Authors if not already there, which will be called when an author publishes
+	 * 
+	 *  
 	 */
 	public void add_author(Author author) {
 

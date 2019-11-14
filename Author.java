@@ -1,3 +1,7 @@
+//BEGIN
+import java.util.List;
+import java.util.ArrayList;
+//END
 /**
  * The Author class is an implementation of the IPublisher interface where the implementation is defined. it is what posts messages and keywords to the broker object
  * 
@@ -22,11 +26,11 @@ public class Author implements IPublisher {
 	 */
 	private List<String> keywords;
 
-	//private Broker broker;
-
 	/**
 	 * Constructor of the Author class that takes in the name of the author an initializes the broker if needed
 	 * 
+	 * 
+	 *  
 	 */
 	public Author(String name) {
 
