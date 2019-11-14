@@ -49,7 +49,7 @@ public class Author implements IPublisher {
 	public void publish(String text, List<String> keywords) {
 		//BEGIN
 		broker.add_keyword(keywords);
-		//broker.
+		broker.add_messages(text);
 	//END
 	}
 

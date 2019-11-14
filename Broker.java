@@ -149,7 +149,9 @@ public class Broker {
 	 *  
 	 */
 	public void add_messages(String text) {
-
+		//BEGIN
+		messages.add(text);//add the message into the string list
+		//END
 	}
 
 }
