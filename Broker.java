@@ -45,11 +45,18 @@ public class Broker {
 			String message = messages.get(messages.size() - 1);
 			for(int i =0 ; i < subscribers.size() ; i++){//go through each of the subscribers 
 				Member mem = subscribers.get(i);
+			//	System.out.println("SUBSCIBER " + mem.getName());
 				for(int j  = 0 ; j < message_k_words.size();j++){//go through all of the keywords of the 
+				//	System.out.println(message_k_words.get(j));
 					if(mem.getKeywords().contains(message_k_words.get(j))){
-						String log = mem.getName() + " recieved an anouncement from " + author.getName() + "\nText: " + message + "\nKeywords:";
+					//	System.out.println("KEY MATCHES");
+						String log = mem.getName() + " recieved an anouncement from " + author.getName() + "\nText: " + message + "\nKeywords: ";
+						for(int x = 0 ; x < message_k_words.size()-1 ; x++){
+							log = log + message_k_words.get(x) + ", ";
+						}
+						log = log + message_k_words.get(message_k_words.size()-1) + "\n";
 						mem.getMessages().add(log);
-						//break;
+						break;
 					}
 				}
 			}

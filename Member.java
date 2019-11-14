@@ -39,7 +39,7 @@ public class Member implements ISubscriber {
 		this.messages = new ArrayList<String>();
 		this.broker = Broker.getInstance();
 		broker.add_member(this);//add the member to the brokers list of members
-		System.out.println(broker.subscribers.size());
+
 		//END
 	}
 
@@ -62,6 +62,7 @@ public class Member implements ISubscriber {
 		//BEGIN
 		if(this.keywords.contains(keyword)){//if the member has the keyword then remove it from the list
 			this.keywords.remove(keyword);
+			System.out.println(keyword + " REMOVED SUCCESSFULLY");
 		}
 		//END
 	}
