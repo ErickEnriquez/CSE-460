@@ -50,7 +50,13 @@ public class Broker {
 	 *  
 	 */
 	private Broker() {
-
+		//BEGIN
+		//INITIALIZE ALL OF THE LISTS
+		this.Authors = new ArrayList<Author>();
+		this.subscribers = new ArrayList<Member>();
+		this.messages = new ArrayList<String>();
+		this.keywords = new ArrayList<String>();
+		//END
 	}
 
 	/**
@@ -59,7 +65,13 @@ public class Broker {
 	 *  
 	 */
 	public static Broker getInstance() {
-		return null;
+		//BEGIN
+		if(broker == null){//if we havent initialized it then initialized it and return reference to it
+			broker = new Broker();
+		}
+		return broker;
+		//END
+		//return null;
 	}
 
 	/**
@@ -67,7 +79,20 @@ public class Broker {
 	 * 
 	 */
 	public void add_keyword(String word) {
+		//BEGIN
+		if(keywords.isEmpty() == true){//if the list is empty just add the word
+			keywords.add(word);
+		}
+		else{ 
+				if(keywords.contains(word)){//if keyword is already in the list don't add it
+					return;
+				}
+				else{
+					keywords.add(word);
+				}
 
+		}
+		//END
 	}
 
 	/**
@@ -84,7 +109,9 @@ public class Broker {
 	 * this method will add the member object to the subscribers list if they haven't been added already
 	 */
 	public void add_member(Member member) {
-
+		//BEGIN
+		this.subscribers.add(member);//add the subscriber 
+		//END
 	}
 
 	/**
@@ -93,7 +120,9 @@ public class Broker {
 	 *  
 	 */
 	public void add_author(Author author) {
-
+		//BEGIN
+		this.Authors.add(author);
+		//END
 	}
 
 }
