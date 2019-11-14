@@ -28,7 +28,7 @@ public class Broker {
 	/**
 	 * broker is refernce to the single instance of the Broker object shared by the author and member
 	 */
-	public static Broker[] broker = null;
+	public static Broker broker = null;
 
 	/**
 	 * Authors is a list of the Authors that the broker knows about 
