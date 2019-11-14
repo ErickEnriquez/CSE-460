@@ -38,7 +38,7 @@ public class Author implements IPublisher {
 		this.name = name;
 		this.keywords = new ArrayList<String>();
 		this.broker = Broker.getInstance();
-		System.out.println(this.name);
+		//System.out.println(this.name);
 		//END
 	}
 
@@ -47,7 +47,10 @@ public class Author implements IPublisher {
 	 *  
 	 */
 	public void publish(String text, List<String> keywords) {
-
+		//BEGIN
+			broker.add_keyword(keywords);
+			//broker.
+		//END
 	}
 
 }
