@@ -1,5 +1,5 @@
  class Driver{
     public static void main(String[] args){
-        System.out.println("TESTING");
+        Author a = new Author("Erick");
     }
 }

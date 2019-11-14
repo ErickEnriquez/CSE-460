@@ -33,7 +33,13 @@ public class Author implements IPublisher {
 	 *  
 	 */
 	public Author(String name) {
-
+		//BEGIN
+		//initialzie the name , the keywords list and the broker refernce
+		this.name = name;
+		this.keywords = new ArrayList<String>();
+		this.broker = Broker.getInstance();
+		System.out.println(this.name);
+		//END
 	}
 
 	/**
