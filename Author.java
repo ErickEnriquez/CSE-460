@@ -50,6 +50,7 @@ public class Author implements IPublisher {
 		//BEGIN
 		broker.add_keyword(keywords);
 		broker.add_messages(text);
+		broker.add_author(this);//add a reference to the author
 	//END
 	}
 

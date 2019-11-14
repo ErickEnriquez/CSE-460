@@ -33,21 +33,33 @@ public class Member implements ISubscriber {
 	 *  
 	 */
 	public Member(String name) {
-
+		//BEGIN
+		this.name  = name;
+		this.keywords = new ArrayList<String>();
+		this.messages = new ArrayList<String>();
+		this.broker = Broker.getInstance();
+		//END
 	}
 
 	/**
 	 * this method takes in a keyword a member wants to subscribe to and adds it to the Broker list of keywords if its not there already
 	 */
 	public void subscribe(String keyword) {
-
+		//BEGIN
+		if(this.keywords.contains(keyword) == false){//if the word isn't already in the list
+			broker.add_keyword(keyword);//add it to the list the broker has as well
+			broker.add_member(this);//add the member to the brokers list of members 
+		}
+		//END
 	}
 
 	/**
 	 * this method takes a keyword string and removes it from the keywords that the member has subscribed to 
 	 */
 	public void unsubscrbe(String keyword) {
-
+		if(this.keywords.contains(keyword)){//if the member has the keyword then remove it from the list
+			this.keywords.remove(keyword);
+		}
 	}
 
 	/**

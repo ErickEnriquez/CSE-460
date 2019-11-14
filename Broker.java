@@ -41,7 +41,7 @@ public class Broker {
 	 *  
 	 */
 	public void notify_members() {
-
+		
 	}
 
 	/**
@@ -103,9 +103,11 @@ public class Broker {
 	 */
 	public void add_keyword(List<String> words) {
 			//BEGIN
-		//NOT DONW YET
+		//Add the keyword that arent already in the list
 		for(int i = 0 ; i < words.size();i++){
-			System.out.println(words.get(i));
+			if(keywords.contains(words.get(i)) == false){
+				keywords.add(words.get(i));
+			}
 		}
 		//END
 	}
@@ -115,7 +117,9 @@ public class Broker {
 	 */
 	public void add_member(Member member) {
 		//BEGIN
+		if (this.subscribers.contains(member)== false){
 		this.subscribers.add(member);//add the subscriber 
+		}
 		//END
 	}
 
@@ -126,7 +130,9 @@ public class Broker {
 	 */
 	public void add_author(Author author) {
 		//BEGIN
-		this.Authors.add(author);
+		if (this.Authors.contains(author) == false){
+		this.Authors.add(author); 
+		}
 		//END
 	}
 
