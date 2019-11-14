@@ -18,7 +18,7 @@ public class Broker {
 	/**
 	 * Keywords is a List of Strings that contains all of the keywords in the system 
 	 */
-	public List<String> keywords;
+	private List<String> keywords;
 
 	/**
 	 * messages is a List of Strings that contain all of messages send to the broker from author
@@ -50,7 +50,7 @@ public class Broker {
 	 *  
 	 */
 	private Broker() {
-		//BEGIN
+			//BEGIN
 		//INITIALIZE ALL OF THE LISTS
 		this.Authors = new ArrayList<Author>();
 		this.subscribers = new ArrayList<Member>();
@@ -65,13 +65,13 @@ public class Broker {
 	 *  
 	 */
 	public static Broker getInstance() {
-		//BEGIN
-		if(broker == null){//if we havent initialized it then initialized it and return reference to it
-			broker = new Broker();
-		}
-		return broker;
-		//END
-		//return null;
+			//BEGIN
+			if(broker == null){//if we havent initialized it then initialized it and return reference to it
+				broker = new Broker();
+			}
+			return broker;
+			//END
+			//return null;
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class Broker {
 	 *  
 	 */
 	public void add_keyword(List<String> words) {
-
+		
 	}
 
 	/**
@@ -122,6 +122,13 @@ public class Broker {
 	public void add_author(Author author) {
 		//BEGIN
 		this.Authors.add(author);
+		//END
+	}
+
+	public List<String> get_keywords() {
+		//BEGIN
+		return this.keywords;
+		//return null;
 		//END
 	}
 
