@@ -37,7 +37,7 @@ public class Author implements IPublisher {
 		//initialzie the name , the keywords list and the broker refernce
 		this.name = name;
 		this.keywords = new ArrayList<String>();
-		this.broker = Broker.getInstance();
+		broker = Broker.getInstance();
 		//System.out.println(this.name);
 		//END
 	}
@@ -51,7 +51,7 @@ public class Author implements IPublisher {
 		broker.add_keyword(keywords);
 		broker.add_messages(text);
 		broker.add_author(this);//add a reference to the author
-		broker.notify_members();//call the broker's notify method
+		broker.notify_members(keywords);//call the broker's notify method
 	//END
 	}
 

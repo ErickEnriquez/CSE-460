@@ -40,13 +40,19 @@ public class Broker {
 	 * 
 	 *  
 	 */
-	public void notify_members() {
+	public void notify_members(List<String> message_k_words) {
 		//BEGIN
 			String message = messages.get(messages.size() - 1);
-			for(int i =0 ; i < keywords.size() ; i++){
-				System.out.println(keywords.get(i));
+			for(int i =0 ; i < subscribers.size() ; i++){//go through each of the subscribers 
+				Member mem = subscribers.get(i);
+				for(int j  = 0 ; j < message_k_words.size();j++){//go through all of the keywords of the 
+					if(mem.getKeywords().contains(message_k_words.get(j))){
+						mem.getMessages().add(message);
+						break;
+					}
+				}
 			}
-			System.out.println(message);
+			//System.out.println(message);
 		//END
 	}
 

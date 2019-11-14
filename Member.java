@@ -49,6 +49,7 @@ public class Member implements ISubscriber {
 		//BEGIN
 		if(this.keywords.contains(keyword) == false){//if the word isn't already in the list
 			broker.add_keyword(keyword);//add it to the list the broker has as well 
+			this.keywords.add(keyword);
 		}
 		//END
 	}
@@ -69,16 +70,19 @@ public class Member implements ISubscriber {
 	 */
 	public List<String> get_log_entries() {
 		//BEGIN
-		//return this.messages
+		return this.messages;
 		//END
-		return null;
+		//return null;
 	}
 ////////////////////////////////////
 	public String getName(){
 		return this.name;
 	}
-	public String getMessages(){
+	public List<String> getMessages(){
 		return this.messages;
+	}
+	public List<String> getKeywords(){
+		return this.keywords;
 	}
 ////////////////////////////////////
 }
