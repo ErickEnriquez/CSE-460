@@ -6,11 +6,11 @@ class Driver{
         Author a = new Author("Erick");
         Author Dillon = new Author("Dillon");
         List<String> Dillon_list = new ArrayList<String>();
-        Member b = new Member("Siriah");
-        Member c = new Member("Bob");
-        Member d = new Member("Rick");
-        b.subscribe("Key2");
-        c.subscribe("Key1");
+        Member Siriah = new Member("Siriah");
+        Member Bob = new Member("Bob");
+        Member Rick = new Member("Rick");
+        Siriah.subscribe("Key2");
+       // Bob.subscribe("Key1");
         //System.out.println(c.getKeywords().size());
         List<String> keywords = new ArrayList<String>();
         keywords.add("Key1");
@@ -18,25 +18,25 @@ class Driver{
         keywords.add("Key3");
         a.publish("THIS IS A MESSAGE", keywords);
         keywords.add("Key4");
-        c.subscribe("Key4");
-        d.subscribe("Key4");
+        Bob.subscribe("Key4");
+        Rick.subscribe("Key4");
 
-       // b.unsubscrbe("Key10");
+        
         a.publish("This is another message",keywords);
-
+        Bob.unsubscrbe("Key4");
         Dillon_list.add("Key4");
         Dillon.publish("DILLONS MESSAGE.", Dillon_list);
 
 
 
 
-        List<String> log = b.get_log_entries();
-        List<String> logc = c.get_log_entries();
-        List<String> logd = d.get_log_entries();
+        List<String> log = Siriah.get_log_entries();
+        List<String> logc = Bob.get_log_entries();
+        List<String> logd = Rick.get_log_entries();
         System.out.println("/////////////////////////////////////////");
-        System.out.println(b.getName()+ " recieved " + log.size());
-        System.out.println(c.getName()+ " recieved " + logc.size());
-        System.out.println(d.getName()+ " recieved " + logd.size());
+        System.out.println(Siriah.getName()+ " recieved " + log.size());
+        System.out.println(Bob.getName()+ " recieved " + logc.size());
+        System.out.println(Rick.getName()+ " recieved " + logd.size());
         System.out.println("/////////////////////////////////////////");
 
         for(int i = 0 ; i < log.size();  i++){
