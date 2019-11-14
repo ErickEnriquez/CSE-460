@@ -1,6 +1,5 @@
 //BEGIN
 import java.util.List;
-import java.util.ArrayList;
 //END
 /**
  * IPublisher is an interface that that is used to define the behavior publish , which will be realized by an Author object

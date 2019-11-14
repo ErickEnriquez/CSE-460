@@ -1,6 +1,5 @@
 //BEGIN
 import java.util.List;
-import java.util.ArrayList;
 //END
 /**
  * This interface describes the operations that need to be implemented by the member class in order to use the interface

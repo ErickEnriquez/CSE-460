@@ -102,7 +102,12 @@ public class Broker {
 	 *  
 	 */
 	public void add_keyword(List<String> words) {
-		
+		//BEGIN
+		//NOT DONW YET
+		for(int i = 0 ; i < words.size();i++){
+			System.out.println(words.get(i));
+		}
+		//END
 	}
 
 	/**
