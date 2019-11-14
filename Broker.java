@@ -18,7 +18,7 @@ public class Broker {
 	/**
 	 * Keywords is a List of Strings that contains all of the keywords in the system 
 	 */
-	private List<String> keywords;
+	public List<String> keywords;
 
 	/**
 	 * messages is a List of Strings that contain all of messages send to the broker from author
@@ -79,20 +79,20 @@ public class Broker {
 	 * 
 	 */
 	public void add_keyword(String word) {
-		//BEGIN
-		if(keywords.isEmpty() == true){//if the list is empty just add the word
-			keywords.add(word);
-		}
-		else{ 
-				if(keywords.contains(word)){//if keyword is already in the list don't add it
-					return;
-				}
-				else{
-					keywords.add(word);
-				}
-
-		}
-		//END
+			//BEGIN
+			if(keywords.isEmpty() == true){//if the list is empty just add the word
+				keywords.add(word);
+			}
+			else{ 
+					if(keywords.contains(word)){//if keyword is already in the list don't add it
+						return;
+					}
+					else{
+						keywords.add(word);
+					}
+	
+			}
+			//END
 	}
 
 	/**
