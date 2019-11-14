@@ -38,6 +38,7 @@ public class Member implements ISubscriber {
 		this.keywords = new ArrayList<String>();
 		this.messages = new ArrayList<String>();
 		this.broker = Broker.getInstance();
+		broker.add_member(this);//add the member to the brokers list of members
 		//END
 	}
 
@@ -47,8 +48,7 @@ public class Member implements ISubscriber {
 	public void subscribe(String keyword) {
 		//BEGIN
 		if(this.keywords.contains(keyword) == false){//if the word isn't already in the list
-			broker.add_keyword(keyword);//add it to the list the broker has as well
-			broker.add_member(this);//add the member to the brokers list of members 
+			broker.add_keyword(keyword);//add it to the list the broker has as well 
 		}
 		//END
 	}
@@ -57,16 +57,28 @@ public class Member implements ISubscriber {
 	 * this method takes a keyword string and removes it from the keywords that the member has subscribed to 
 	 */
 	public void unsubscrbe(String keyword) {
+		//BEGIN
 		if(this.keywords.contains(keyword)){//if the member has the keyword then remove it from the list
 			this.keywords.remove(keyword);
 		}
+		//END
 	}
 
 	/**
 	 * this method returns a list of the messages that the user has received if it is empty it returns an empty list , 
 	 */
 	public List<String> get_log_entries() {
+		//BEGIN
+		//return this.messages
+		//END
 		return null;
 	}
-
+////////////////////////////////////
+	public String getName(){
+		return this.name;
+	}
+	public String getMessages(){
+		return this.messages;
+	}
+////////////////////////////////////
 }

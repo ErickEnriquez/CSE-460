@@ -9,5 +9,7 @@ class Driver{
         keywords.add("NUMBER");
         keywords.add("TEST2");
         a.publish("THIS IS A MESSAGE", keywords);
+        keywords.add("THIS IS A NEW ITEM");
+        a.publish("This is another message",keywords);
     }
 }

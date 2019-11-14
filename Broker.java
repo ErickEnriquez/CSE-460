@@ -41,7 +41,13 @@ public class Broker {
 	 *  
 	 */
 	public void notify_members() {
-		
+		//BEGIN
+			String message = messages.get(messages.size() - 1);
+			for(int i =0 ; i < keywords.size() ; i++){
+				System.out.println(keywords.get(i));
+			}
+			System.out.println(message);
+		//END
 	}
 
 	/**

@@ -51,7 +51,17 @@ public class Author implements IPublisher {
 		broker.add_keyword(keywords);
 		broker.add_messages(text);
 		broker.add_author(this);//add a reference to the author
+		broker.notify_members();//call the broker's notify method
 	//END
 	}
+
+
+////////////////////////////////
+	public String getName(){
+		return this.name;
+		//return null;
+	}
+////////////////////////////////
+
 
 }
