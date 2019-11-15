@@ -58,11 +58,11 @@ public class Member implements ISubscriber {
 	/**
 	 * this method takes a keyword string and removes it from the keywords that the member has subscribed to 
 	 */
-	public void unsubscrbe(String keyword) {
+	public void unsubscribe(String keyword) {
 		//BEGIN
 		if(this.keywords.contains(keyword)){//if the member has the keyword then remove it from the list
 			this.keywords.remove(keyword);
-			System.out.println(keyword + " REMOVED SUCCESSFULLY");
+			//System.out.println(keyword + " REMOVED SUCCESSFULLY");
 		}
 		//END
 	}
@@ -109,16 +109,6 @@ public class Member implements ISubscriber {
 		return this.keywords;
 		//END
 		//return null;
-	}
-
-
-	/**
-	 * @see ISubscriber#unsubscribe(String)
-	 * 
-	 *  
-	 */
-	public void unsubscribe(String keyword) {
-
 	}
 
 }

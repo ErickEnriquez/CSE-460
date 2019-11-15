@@ -40,11 +40,8 @@ public class Broker {
 		String message = messages.get(messages.size() - 1);
 		for(int i =0 ; i < subscribers.size() ; i++){//go through each of the subscribers 
 			Member mem = subscribers.get(i);
-		//	System.out.println("SUBSCIBER " + mem.getName());
 			for(int j  = 0 ; j < message_k_words.size();j++){//go through all of the keywords of the 
-			//	System.out.println(message_k_words.get(j));
 				if(mem.getKeywords().contains(message_k_words.get(j))){
-				//	System.out.println("KEY MATCHES");
 					String log = mem.getName() + " recieved an anouncement from " + author.getName() + "\nText: " + message + "\nKeywords: ";
 					for(int x = 0 ; x < message_k_words.size()-1 ; x++){
 						log = log + message_k_words.get(x) + ", ";
@@ -55,7 +52,6 @@ public class Broker {
 				}
 			}
 		}
-		//System.out.println(message);
 	//END
 	}
 
@@ -65,9 +61,8 @@ public class Broker {
 	 *  
 	 */
 	private Broker() {
-			//BEGIN
+		//BEGIN
 		//INITIALIZE ALL OF THE LISTS
-		//this.Authors = new ArrayList<Author>();
 		this.subscribers = new ArrayList<Member>();
 		this.messages = new ArrayList<String>();
 		this.keywords = new ArrayList<String>();

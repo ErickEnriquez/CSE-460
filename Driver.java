@@ -23,7 +23,7 @@ class Driver{
 
         
         a.publish("This is another message",keywords);
-        Bob.unsubscrbe("Key4");
+        Bob.unsubscribe("Key4");
         Dillon_list.add("Key4");
         Dillon.publish("DILLONS MESSAGE.", Dillon_list);
 

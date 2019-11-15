@@ -29,9 +29,7 @@ public class Author implements IPublisher {
 		//BEGIN
 		//initialzie the name , the keywords list and the broker refernce
 		this.name = name;
-		//this.keywords = new ArrayList<String>();
 		broker = Broker.getInstance();
-		//System.out.println(this.name);
 		//END
 	}
 
@@ -40,22 +38,20 @@ public class Author implements IPublisher {
 	 *  
 	 */
 	public void publish(String text, List<String> keywords) {
-		//BEGIN
-	//	broker.add_keyword(keywords);
+			//BEGIN
 		broker.add_messages(text);
-	//	broker.add_author(this);//add a reference to the author
 		broker.notify_members(keywords,this);//call the broker's notify method
-	//END
+		//END
 	}
 
 	/**
 	 * the function gets the name of the author object
 	 */
 	public String getName() {
-		//BEGIN
-		return this.name;
-		//END
-		//return null;
+			//BEGIN
+			return this.name;
+			//END
+			//return null;
 	}
 
 }
