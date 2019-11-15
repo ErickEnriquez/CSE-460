@@ -31,37 +31,32 @@ public class Broker {
 	public static Broker broker = null;
 
 	/**
-	 * Authors is a list of the Authors that the broker knows about 
-	 */
-	private List<Author> Authors;
-
-	/**
 	 * notify members is function that will let the members that have subscribed to a keyword know about a message
 	 * 
 	 *  
 	 */
-	public void notify_members(List<String> message_k_words , Author author) {
+	public void notify_members(List<String> message_k_words, Author author) {
 		//BEGIN
-			String message = messages.get(messages.size() - 1);
-			for(int i =0 ; i < subscribers.size() ; i++){//go through each of the subscribers 
-				Member mem = subscribers.get(i);
-			//	System.out.println("SUBSCIBER " + mem.getName());
-				for(int j  = 0 ; j < message_k_words.size();j++){//go through all of the keywords of the 
-				//	System.out.println(message_k_words.get(j));
-					if(mem.getKeywords().contains(message_k_words.get(j))){
-					//	System.out.println("KEY MATCHES");
-						String log = mem.getName() + " recieved an anouncement from " + author.getName() + "\nText: " + message + "\nKeywords: ";
-						for(int x = 0 ; x < message_k_words.size()-1 ; x++){
-							log = log + message_k_words.get(x) + ", ";
-						}
-						log = log + message_k_words.get(message_k_words.size()-1) + "\n";
-						mem.getMessages().add(log);
-						break;
+		String message = messages.get(messages.size() - 1);
+		for(int i =0 ; i < subscribers.size() ; i++){//go through each of the subscribers 
+			Member mem = subscribers.get(i);
+		//	System.out.println("SUBSCIBER " + mem.getName());
+			for(int j  = 0 ; j < message_k_words.size();j++){//go through all of the keywords of the 
+			//	System.out.println(message_k_words.get(j));
+				if(mem.getKeywords().contains(message_k_words.get(j))){
+				//	System.out.println("KEY MATCHES");
+					String log = mem.getName() + " recieved an anouncement from " + author.getName() + "\nText: " + message + "\nKeywords: ";
+					for(int x = 0 ; x < message_k_words.size()-1 ; x++){
+						log = log + message_k_words.get(x) + ", ";
 					}
+					log = log + message_k_words.get(message_k_words.size()-1) + "\n";
+					mem.getMessages().add(log);
+					break;
 				}
 			}
-			//System.out.println(message);
-		//END
+		}
+		//System.out.println(message);
+	//END
 	}
 
 	/**
@@ -72,7 +67,7 @@ public class Broker {
 	private Broker() {
 			//BEGIN
 		//INITIALIZE ALL OF THE LISTS
-		this.Authors = new ArrayList<Author>();
+		//this.Authors = new ArrayList<Author>();
 		this.subscribers = new ArrayList<Member>();
 		this.messages = new ArrayList<String>();
 		this.keywords = new ArrayList<String>();
@@ -85,13 +80,13 @@ public class Broker {
 	 *  
 	 */
 	public static Broker getInstance() {
-			//BEGIN
-			if(broker == null){//if we havent initialized it then initialized it and return reference to it
-				broker = new Broker();
-			}
-			return broker;
-			//END
-			//return null;
+		//BEGIN
+		if(broker == null){//if we havent initialized it then initialized it and return reference to it
+			broker = new Broker();
+		}
+		return broker;
+		//END
+		//return null;
 	}
 
 	/**
@@ -99,20 +94,20 @@ public class Broker {
 	 * 
 	 */
 	public void add_keyword(String word) {
-			//BEGIN
-			if(keywords.isEmpty() == true){//if the list is empty just add the word
-				keywords.add(word);
-			}
-			else{ 
-					if(keywords.contains(word)){//if keyword is already in the list don't add it
-						return;
-					}
-					else{
-						keywords.add(word);
-					}
-	
-			}
-			//END
+		//BEGIN
+		if(keywords.isEmpty() == true){//if the list is empty just add the word
+			keywords.add(word);
+		}
+		else{ 
+				if(keywords.contains(word)){//if keyword is already in the list don't add it
+					return;
+				}
+				else{
+					keywords.add(word);
+				}
+
+		}
+		//END
 	}
 
 	/**
@@ -138,22 +133,9 @@ public class Broker {
 	public void add_member(Member member) {
 		//BEGIN
 		if (this.subscribers.contains(member)== false){
-		this.subscribers.add(member);//add the subscriber 
-		}
-		//END
-	}
-
-	/**
-	 * this method will add the Author object to the list of Authors if not already there, which will be called when an author publishes
-	 * 
-	 *  
-	 */
-	public void add_author(Author author) {
-		//BEGIN
-		if (this.Authors.contains(author) == false){
-		this.Authors.add(author); 
-		}
-		//END
+			this.subscribers.add(member);//add the subscriber 
+			}
+			//END
 	}
 
 	/**
@@ -165,7 +147,6 @@ public class Broker {
 		return this.keywords;
 		//return null;
 		//END
-		//return null;
 	}
 
 	/**

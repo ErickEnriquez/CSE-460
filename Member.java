@@ -76,15 +76,49 @@ public class Member implements ISubscriber {
 		//END
 		//return null;
 	}
-////////////////////////////////////
-	public String getName(){
+
+	/**
+	 * This method returns the name of the Member object
+	 * 
+	 * 
+	 *  
+	 */
+	public String getName() {
+		//BEGIN
 		return this.name;
+		//END
+		//return null;
 	}
-	public List<String> getMessages(){
+
+	/**
+	 * This method gets the messages list from a member object
+	 */
+	public List<String> getMessages() {
+		//BEGIN
 		return this.messages;
+		//END
+		//return null;
 	}
-	public List<String> getKeywords(){
+
+	/**
+	 * This method gets the keywords list from a member object
+	 * 
+	 */
+	public List<String> getKeywords() {
+		//BEGIN
 		return this.keywords;
+		//END
+		//return null;
 	}
-////////////////////////////////////
+
+
+	/**
+	 * @see ISubscriber#unsubscribe(String)
+	 * 
+	 *  
+	 */
+	public void unsubscribe(String keyword) {
+
+	}
+
 }

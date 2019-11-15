@@ -18,7 +18,7 @@ public interface ISubscriber {
 	 * 
 	 *  
 	 */
-	public abstract void unsubscrbe(String keyword);
+	public abstract void unsubscribe(String keyword);
 
 	/**
 	 * get_log_entries is a method that returns List of Messages , implemented in the Member class

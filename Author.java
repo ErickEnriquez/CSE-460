@@ -1,6 +1,5 @@
 //BEGIN
 import java.util.List;
-import java.util.ArrayList;
 //END
 /**
  * The Author class is an implementation of the IPublisher interface where the implementation is defined. it is what posts messages and keywords to the broker object
@@ -21,12 +20,6 @@ public class Author implements IPublisher {
 	private Broker broker;
 
 	/**
-	 * This is a list of the keywords that are going to be used in the call of the publish method
-	 * 
-	 */
-	private List<String> keywords;
-
-	/**
 	 * Constructor of the Author class that takes in the name of the author an initializes the broker if needed
 	 * 
 	 * 
@@ -36,7 +29,7 @@ public class Author implements IPublisher {
 		//BEGIN
 		//initialzie the name , the keywords list and the broker refernce
 		this.name = name;
-		this.keywords = new ArrayList<String>();
+		//this.keywords = new ArrayList<String>();
 		broker = Broker.getInstance();
 		//System.out.println(this.name);
 		//END
@@ -48,20 +41,21 @@ public class Author implements IPublisher {
 	 */
 	public void publish(String text, List<String> keywords) {
 		//BEGIN
-		broker.add_keyword(keywords);
+	//	broker.add_keyword(keywords);
 		broker.add_messages(text);
-		broker.add_author(this);//add a reference to the author
+	//	broker.add_author(this);//add a reference to the author
 		broker.notify_members(keywords,this);//call the broker's notify method
 	//END
 	}
 
-
-////////////////////////////////
-	public String getName(){
+	/**
+	 * the function gets the name of the author object
+	 */
+	public String getName() {
+		//BEGIN
 		return this.name;
+		//END
 		//return null;
 	}
-////////////////////////////////
-
 
 }
