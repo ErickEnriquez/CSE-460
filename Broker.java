@@ -46,7 +46,7 @@ public class Broker {
 					for(int x = 0 ; x < message_k_words.size()-1 ; x++){
 						log = log + message_k_words.get(x) + ", ";
 					}
-					log = log + message_k_words.get(message_k_words.size()-1) + "\n";
+					log = log + message_k_words.get(message_k_words.size()-1);
 					mem.getMessages().add(log);
 					break;
 				}
@@ -140,8 +140,8 @@ public class Broker {
 	public List<String> get_keywords() {
 		//BEGIN
 		return this.keywords;
-		//return null;
 		//END
+		//return null;
 	}
 
 	/**

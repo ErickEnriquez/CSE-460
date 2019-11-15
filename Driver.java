@@ -16,15 +16,16 @@ class Driver{
         keywords.add("Key1");
         keywords.add("Key2");
         keywords.add("Key3");
-        a.publish("THIS IS A MESSAGE", keywords);
+        a.publish("THIS IS A MESSAGE.", keywords);
         keywords.add("Key4");
         Bob.subscribe("Key4");
         Rick.subscribe("Key4");
 
         
-        a.publish("This is another message",keywords);
+        a.publish("This is another message.",keywords);
         Bob.unsubscribe("Key4");
         Dillon_list.add("Key4");
+        Dillon_list.add("Key2");
         Dillon.publish("DILLONS MESSAGE.", Dillon_list);
 
 
@@ -33,11 +34,11 @@ class Driver{
         List<String> log = Siriah.get_log_entries();
         List<String> logc = Bob.get_log_entries();
         List<String> logd = Rick.get_log_entries();
-        System.out.println("/////////////////////////////////////////");
-        System.out.println(Siriah.getName()+ " recieved " + log.size());
-        System.out.println(Bob.getName()+ " recieved " + logc.size());
-        System.out.println(Rick.getName()+ " recieved " + logd.size());
-        System.out.println("/////////////////////////////////////////");
+       // System.out.println("/////////////////////////////////////////");
+       // System.out.println(Siriah.getName()+ " recieved " + log.size());
+       // System.out.println(Bob.getName()+ " recieved " + logc.size());
+       // System.out.println(Rick.getName()+ " recieved " + logd.size());
+       // System.out.println("/////////////////////////////////////////");
 
         for(int i = 0 ; i < log.size();  i++){
             System.out.println(log.get(i));
