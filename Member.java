@@ -62,7 +62,6 @@ public class Member implements ISubscriber {
 		//BEGIN
 		if(this.keywords.contains(keyword)){//if the member has the keyword then remove it from the list
 			this.keywords.remove(keyword);
-			//System.out.println(keyword + " REMOVED SUCCESSFULLY");
 		}
 		//END
 	}
