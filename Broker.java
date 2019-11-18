@@ -37,17 +37,25 @@ public class Broker {
 	 */
 	public void notify_members(List<String> message_k_words, Author author) {
 		//BEGIN
-		String message = messages.get(messages.size() - 1);
+		String message = messages.get(messages.size() - 1);// text of the message
+		boolean found;//marks if the user has a copy of the message
 		for(int i =0 ; i < subscribers.size() ; i++){//go through each of the subscribers 
 			Member mem = subscribers.get(i);
+			found = false;
 			for(int j  = 0 ; j < message_k_words.size();j++){//go through all of the keywords of the 
-				if(mem.getKeywords().contains(message_k_words.get(j))){
-					String log = mem.getName() + " received an announcement from " + author.getName() + ".\nText: " + message + "\nKeywords: ";
-					for(int x = 0 ; x < message_k_words.size()-1 ; x++){
-						log = log + message_k_words.get(x) + ", ";
+				List<String> MemKeywords = mem.getKeywords();//get the keywords of the member
+				for (int k = 0 ; k < MemKeywords.size();k++){
+					if (MemKeywords.get(k).equalsIgnoreCase(message_k_words.get(j))){//if keywords match ignoring case 
+						String log = mem.getName() + " received an announcement from " + author.getName() + ".\nText: " + message + "\nKeywords: ";
+						for(int x = 0 ; x < message_k_words.size()-1 ; x++){
+							log = log + message_k_words.get(x) + ", ";
+						}
+						log = log + message_k_words.get(message_k_words.size()-1) + ".";
+						mem.getMessages().add(log);
+						found = true;	//mark as true to avoid redundant log entries
 					}
-					log = log + message_k_words.get(message_k_words.size()-1) + ".";
-					mem.getMessages().add(log);
+				}
+				if (found == true){//break out of this member if they already have a copy of the mesage
 					break;
 				}
 			}
