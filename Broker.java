@@ -42,11 +42,11 @@ public class Broker {
 			Member mem = subscribers.get(i);
 			for(int j  = 0 ; j < message_k_words.size();j++){//go through all of the keywords of the 
 				if(mem.getKeywords().contains(message_k_words.get(j))){
-					String log = mem.getName() + " recieved an anouncement from " + author.getName() + "\nText: " + message + "\nKeywords: ";
+					String log = mem.getName() + " received an announcement from " + author.getName() + ".\nText: " + message + "\nKeywords: ";
 					for(int x = 0 ; x < message_k_words.size()-1 ; x++){
 						log = log + message_k_words.get(x) + ", ";
 					}
-					log = log + message_k_words.get(message_k_words.size()-1);
+					log = log + message_k_words.get(message_k_words.size()-1) + ".";
 					mem.getMessages().add(log);
 					break;
 				}
